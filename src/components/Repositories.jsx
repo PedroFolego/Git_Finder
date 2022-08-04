@@ -30,15 +30,19 @@ function Repositories({ reposUrl, publicRepos }) {
             <h4>{repo.language}</h4>
             <p>{repo.description}</p>
             {/* {repo.license && <p>{repo.license}</p>} */}
-            <h4>
+            <p>
               Forks
               {' '}
               {repo.forks}
-            </h4>
+            </p>
             <div>
               {repo.topics.map((topic) => (<p>{topic}</p>))}
             </div>
-            <h4>{repo.updated_at}</h4>
+            <h4>
+              Last update:
+              {' '}
+              {repo.updated_at}
+            </h4>
           </div>
         ))}
       </nav>
