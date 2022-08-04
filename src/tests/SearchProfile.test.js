@@ -1,31 +1,23 @@
 import React from 'react';
-import { screen, render } from '@testing-library/react';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+import { screen } from '@testing-library/react';
+import renderRouter from './renderWithRouter';
 import SearchProfile from '../pages/SearchProfile';
 
 describe('Testa a página <UserProfile />', () => {
-  const history = createMemoryHistory();
   const mockCallback = jest.fn({});
-  const renderRouter = () => render(
-    <Router location={history.location} navigator={history}>
-      <SearchProfile setDataProfile={mockCallback} />
-    </Router>,
-  );
-
   it('Teste se a página contém um heading h2 com o texto Buscar Repositório no github.', () => {
-    renderRouter();
+    renderRouter(<SearchProfile setDataProfile={mockCallback} />);
     const title = screen.getByRole('heading', { name: /Buscar Repositório no github/i });
     expect(title).toBeInTheDocument();
   });
   it('Teste se a página contém um botão', () => {
-    renderRouter();
-    const title = screen.getByTestId('button');
-    expect(title).toBeInTheDocument();
+    renderRouter(<SearchProfile setDataProfile={mockCallback} />);
+    const button = screen.getByTestId('button');
+    expect(button).toBeInTheDocument();
   });
-  it('Teste se a página contém um input com placeholder', () => {
-    renderRouter();
-    const title = screen.getByTestId('input');
-    expect(title).toBeInTheDocument();
+  it('Teste se a página contém um input', () => {
+    renderRouter(<SearchProfile setDataProfile={mockCallback} />);
+    const input = screen.getByTestId('input');
+    expect(input).toBeInTheDocument();
   });
 });
