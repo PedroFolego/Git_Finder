@@ -3,27 +3,31 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-function SearchProfile({ setUrlProfile, urlProfile }) {
+function SearchProfile({ setUrlProfile }) {
   const [input, setInput] = useState('');
   const [emptyInput, setEmptyInput] = useState(false);
   const [invalidUser, setInvalidUser] = useState(false);
   const navigate = useNavigate();
 
+  const notFoundUser = () => {
+    setInput('');
+    setInvalidUser(true);
+  };
+
   const getProfile = async () => {
     try {
       await axios.get(`https://api.github.com/users/${input}`);
       setUrlProfile(`https://api.github.com/users/${input}`);
-
-      console.log(urlProfile);
       navigate('/profile');
     } catch (error) {
-      setInvalidUser(true);
+      notFoundUser();
     }
   };
 
   const verifyImput = () => {
     if (input === '') {
-      return setEmptyInput(false);
+      setInvalidUser(false);
+      return setEmptyInput(true);
     }
     return getProfile();
   };
@@ -42,6 +46,7 @@ function SearchProfile({ setUrlProfile, urlProfile }) {
           <input
             id="inputProfile"
             placeholder="Digite o nome do usuário"
+            value={input}
             onChange={onChangeButton}
           />
         </label>
@@ -66,6 +71,5 @@ function SearchProfile({ setUrlProfile, urlProfile }) {
 export default SearchProfile;
 
 SearchProfile.propTypes = {
-  urlProfile: PropTypes.string.isRequired,
   setUrlProfile: PropTypes.func.isRequired,
 };
