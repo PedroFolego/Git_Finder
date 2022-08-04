@@ -27,6 +27,14 @@ function Repositories({ reposUrl, publicRepos }) {
         {repositories.map((repo) => (
           <div>
             <h2>{repo.name}</h2>
+            <h4>{repo.language}</h4>
+            <p>{repo.description}</p>
+            {/* {repo.license && <p>{repo.license}</p>} */}
+            <h4>
+              Forks
+              {' '}
+              {repo.forks}
+            </h4>
             <div>
               {repo.topics.map((topic) => (<p>{topic}</p>))}
             </div>
