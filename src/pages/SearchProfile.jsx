@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-function SearchProfile({ setUrlProfile }) {
+function SearchProfile({ setDataProfile }) {
   const [input, setInput] = useState('');
   const [emptyInput, setEmptyInput] = useState(false);
   const [invalidUser, setInvalidUser] = useState(false);
@@ -16,8 +16,8 @@ function SearchProfile({ setUrlProfile }) {
 
   const getProfile = async () => {
     try {
-      await axios.get(`https://api.github.com/users/${input}`);
-      setUrlProfile(`https://api.github.com/users/${input}`);
+      const response = await axios.get(`https://api.github.com/users/${input}`);
+      setDataProfile(response.data);
       navigate('/profile');
     } catch (error) {
       notFoundUser();
@@ -71,5 +71,5 @@ function SearchProfile({ setUrlProfile }) {
 export default SearchProfile;
 
 SearchProfile.propTypes = {
-  setUrlProfile: PropTypes.func.isRequired,
+  setDataProfile: PropTypes.func.isRequired,
 };
