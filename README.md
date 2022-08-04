@@ -18,11 +18,12 @@ Projeto criado para o desafio da Atlas GR Tecnologia.
 ### Instalando Dependências
  
 ```
-cd PedroFolego-desafio-react/src/
+cd PedroFolego-desafio-react/
 npm install
 ``` 
 ### Executando aplicação
 ```
+cd src/
 npm start
 ``` 
 
