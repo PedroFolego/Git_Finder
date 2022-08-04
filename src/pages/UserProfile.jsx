@@ -7,7 +7,7 @@ function UserProfile({ dataProfile }) {
   const { repos_url: reposUrl, public_repos: publicRepos } = dataProfile;
 
   return (
-    <main>
+    <main className="d-flex align-items-start">
       <User dataProfile={dataProfile} />
       <Repositories reposUrl={reposUrl} publicRepos={publicRepos} />
     </main>

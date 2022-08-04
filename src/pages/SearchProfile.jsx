@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import {
-  Button, Container, Form,
+  Button, Form,
 } from 'react-bootstrap';
 
 function SearchProfile({ setDataProfile }) {
@@ -42,7 +42,7 @@ function SearchProfile({ setDataProfile }) {
   };
 
   return (
-    <Container style={{ height: '100vh' }} className="mw-100 mh-100 d-flex flex-column justify-content-center align-items-center">
+    <section style={{ height: '100vh' }} className="col mw-100 mh-100 d-flex flex-column justify-content-center align-items-center">
       <h1 className="text-center">Buscar Repositório no github</h1>
       <Form style={{ margin: '10px' }} className="d-flex justify-content-center align-items-center">
         <Form.Control
@@ -67,7 +67,7 @@ function SearchProfile({ setDataProfile }) {
             Usuário não encontrado no github. Verifique se você digitou o nome corretamente
           </h4>
           )}
-    </Container>
+    </section>
 
   );
 }

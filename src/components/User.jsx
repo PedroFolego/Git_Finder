@@ -11,8 +11,8 @@ function User({ dataProfile }) {
     login, followers,
   } = dataProfile;
   return (
-    <aside className="w-50 p-4 d-flex flex-column justify-content-center align-items-center">
-      <img src={avatarUrl} alt="user profile" className="rounded-circle w-75 p-3" />
+    <aside style={{ height: '100vh' }} className="mh-100 w-50 p-4 d-flex flex-column justify-content-center align-items-center">
+      <img src={avatarUrl} alt="user profile" className="rounded-circle w-50 p-3" />
       <article className="d-flex flex-column">
         <h2>{name}</h2>
         <h4 className="mb-4">{login}</h4>

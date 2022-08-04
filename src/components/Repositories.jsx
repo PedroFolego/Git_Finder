@@ -15,34 +15,34 @@ function Repositories({ reposUrl, publicRepos }) {
   }, []);
 
   return (
-    <section>
-      <header>
-        <h1>
+    <section className="mh-100 w-50 p-4 d-flex flex-column justify-content-center align-items-center">
+      <header className="d-flex w-100 border-bottom border-secondary">
+        <h2 className="px-2 mb-0 rounded border-secondary">
           Repositories
           {' '}
           {publicRepos}
-        </h1>
+        </h2>
       </header>
-      <nav>
+      <nav className="mt-4">
         {repositories.map((repo) => (
-          <div>
-            <h2>{repo.name}</h2>
-            <h4>{repo.language}</h4>
-            <p>{repo.description}</p>
-            {/* {repo.license && <p>{repo.license}</p>} */}
-            <p>
-              Forks
-              {' '}
-              {repo.forks}
-            </p>
-            <div>
-              {repo.topics.map((topic) => (<p>{topic}</p>))}
+          <div className="border-bottom mt-2">
+            <h2 className="text-primary">{repo.name}</h2>
+            {repo.language && <li>{repo.language}</li>}
+            <p className="mt-2">{repo.description}</p>
+            <div className="d-flex flex-wrap mt-2">
+              {repo.topics.map((topic) => (<p className="justify-content-center align-items-center border rounded px-1 bg-secondary text-white">{topic}</p>))}
             </div>
-            <h4>
-              Last update:
-              {' '}
-              {repo.updated_at}
-            </h4>
+            <div className="d-flex justify-content-start mt-0">
+              <div className="d-flex align-items-center">
+                <i className="fa-solid fa-code-fork" />
+                <p className="mt-3 mx-2">{repo.forks}</p>
+              </div>
+              <p className="mt-3 mx-2">
+                Last update:
+                {' '}
+                {repo.updated_at.slice(0, 10)}
+              </p>
+            </div>
           </div>
         ))}
       </nav>
