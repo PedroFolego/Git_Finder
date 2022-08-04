@@ -1,12 +1,14 @@
 # GitFinder
 
 ### Site de busca do GitHub.
-
-[alt text](./images/searchPage.png)
-[alt text](./images/userPage.png)
 Sendo capaz de buscar todos os perfis de usuário do GitHub.
 
 Projeto criado para o desafio da Atlas GR Tecnologia.
+
+<details>
+ <summary>Ilustração</summary>
+ <img src="/images/searchPage.png" alt="Alt text" title="Optional title" width="50%"><img src="/images/userPage.png" alt="Alt text" title="Optional title"  width="50%">
+</details>
 
 ### Técnologias usadas
 
