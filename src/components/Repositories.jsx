@@ -15,7 +15,7 @@ function Repositories({ reposUrl, publicRepos }) {
   }, []);
 
   return (
-    <section className="mh-100 w-50 p-4 d-flex flex-column justify-content-center align-items-center">
+    <section className="mh-100 d-flex flex-column justify-content-center align-items-center repositorySide">
       <header className="d-flex w-100 border-bottom border-secondary">
         <h2 className="px-2 mb-0 rounded border-secondary">
           Repositories

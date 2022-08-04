@@ -1,3 +1,25 @@
-@media (min-width: 767.98px) {
-  
+.mainProfile {
+  display: flex;
+  flex-flow: column;
+
+}
+.userSide {
+  width: 100%;
+}
+.repositorySide {
+  margin-top: 80px;
+  margin-left: 10px;
+}
+@media (min-width: 768px) {
+  .mainProfile {
+    display: flex;
+    flex-flow: row;
+  } 
+  .userSide {
+    width: 50%;
+  }
+  .repositorySide {
+    margin-top: 30px;
+    margin-left: 0;
+  }
 }

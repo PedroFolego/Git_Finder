@@ -1,16 +1,22 @@
-.profileImg {
-  background-color: red;
-  width: 100%;
+
+@media (max-width: 576px) {
+  .profileImg {
+    max-width: 70%;
+  }
+ }
+ @media (max-width: 768px) {
+  .profileImg {
+    max-width: 60%;
+  }
+ }
+@media (max-width: 992px) {
+  .profileImg {
+    width: 60%;
+  }
 }
-@media (min-width: 768px) {
+
+@media (max-width: 1200px) {
   .profileImg {
-    background-color: red;
-    width: 75%;
+    width: 80%;
   }
- }
- @media (min-width: 992px) {
-  .profileImg {
-    background-color: red;
-    width: 50%;
-  }
- }
+}
