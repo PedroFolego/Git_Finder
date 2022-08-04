@@ -27,7 +27,9 @@ function Repositories({ reposUrl, publicRepos }) {
         {repositories.map((repo) => (
           <div>
             <h2>{repo.name}</h2>
-            {repo.topics.map((topic) => (<p>{topic}</p>))}
+            <div>
+              {repo.topics.map((topic) => (<p>{topic}</p>))}
+            </div>
             <h4>{repo.updated_at}</h4>
           </div>
         ))}
