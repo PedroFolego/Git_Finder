@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import './User.css';
 
 function User({ dataProfile }) {
   const {
@@ -12,7 +13,7 @@ function User({ dataProfile }) {
   } = dataProfile;
   return (
     <aside style={{ height: '100vh' }} className="mh-100 w-50 p-4 d-flex flex-column justify-content-center align-items-center">
-      <img src={avatarUrl} alt="user profile" className="rounded-circle w-50 p-3" />
+      <img src={avatarUrl} alt="user profile" className="rounded-circle profileImg" />
       <article className="d-flex flex-column">
         <h2>{name}</h2>
         <h4 className="mb-4">{login}</h4>

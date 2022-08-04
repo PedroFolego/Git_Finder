@@ -1,0 +1,16 @@
+.profileImg {
+  background-color: red;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .profileImg {
+    background-color: red;
+    width: 75%;
+  }
+ }
+ @media (min-width: 992px) {
+  .profileImg {
+    background-color: red;
+    width: 50%;
+  }
+ }
