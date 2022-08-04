@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function User(dataProfile) {
+function User({ dataProfile }) {
   const {
     twitter_username: twitterUsername,
     public_repos: publicRepos,
@@ -11,7 +11,27 @@ function User(dataProfile) {
     login, followers,
   } = dataProfile;
   return (
-    <section />
+    <section>
+      <img src={avatarUrl} alt="user profile" />
+      <h1>{name}</h1>
+      <h3>{login}</h3>
+      <h3>{bio}</h3>
+      <h3>{blog}</h3>
+      <h3>{twitterUsername}</h3>
+      <h3>{publicRepos}</h3>
+      <h3>{company}</h3>
+      <h3>{location}</h3>
+      <h3>
+        {following}
+        {' '}
+        following
+      </h3>
+      <h3>
+        {followers}
+        {' '}
+        followers
+      </h3>
+    </section>
   );
 }
 
