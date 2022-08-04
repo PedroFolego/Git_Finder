@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SearchProfile from './pages/SearchProfile';
 import UserProfile from './pages/UserProfile';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [dataProfile, setDataProfile] = useState({});

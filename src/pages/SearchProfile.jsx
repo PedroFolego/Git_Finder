@@ -2,6 +2,9 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import {
+  Button, Container, Form,
+} from 'react-bootstrap';
 
 function SearchProfile({ setDataProfile }) {
   const [input, setInput] = useState('');
@@ -39,32 +42,33 @@ function SearchProfile({ setDataProfile }) {
   };
 
   return (
-    <main>
-      <h1>Buscar Repositório no github</h1>
-      <nav>
-        <label htmlFor="inputProfile">
-          <input
-            id="inputProfile"
-            placeholder="Digite o nome do usuário"
-            value={input}
-            onChange={onChangeButton}
-          />
-        </label>
-        <button
+    <Container style={{ height: '100vh' }} className="mw-100 mh-100 d-flex flex-column justify-content-center align-items-center">
+      <h1 className="text-center">Buscar Repositório no github</h1>
+      <Form style={{ margin: '10px' }} className="d-flex justify-content-center align-items-center">
+        <Form.Control
+          style={{ marginRight: '10px' }}
+          id="inputProfile"
+          placeholder="Digite o nome do usuário"
+          value={input}
+          onChange={onChangeButton}
+        />
+        <Button
+          variant="primary"
           type="button"
           onClick={verifyImput}
         >
           Pesquisar
-        </button>
-        {emptyInput && <h1>informe um nome de usuário válido do github</h1>}
-        {invalidUser
+        </Button>
+      </Form>
+      {emptyInput && <h4 className="text-center mt-2">informe um nome de usuário válido do github</h4>}
+      {invalidUser
           && (
-          <h1>
+          <h4 className="text-center mt-2">
             Usuário não encontrado no github. Verifique se você digitou o nome corretamente
-          </h1>
+          </h4>
           )}
-      </nav>
-    </main>
+    </Container>
+
   );
 }
 
