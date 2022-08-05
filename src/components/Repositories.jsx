@@ -25,12 +25,12 @@ function Repositories({ reposUrl, publicRepos }) {
       </header>
       <nav className="mt-4 w-100">
         {repositories.map((repo) => (
-          <div className="border-bottom mt-2 ">
+          <div className="border-bottom mt-2 " key={repo.name}>
             <h2 className="text-primary">{repo.name}</h2>
             {repo.language && <li>{repo.language}</li>}
             <p className="mt-2">{repo.description}</p>
             <div className="d-flex flex-wrap mt-2">
-              {repo.topics.map((topic) => (<p className="justify-content-center align-items-center border rounded px-1 bg-secondary text-white">{topic}</p>))}
+              {repo.topics.map((topic) => (<p key={topic} className="justify-content-center align-items-center border rounded px-1 bg-secondary text-white">{topic}</p>))}
             </div>
             <div className="d-flex justify-content-start mt-0">
               <div className="d-flex align-items-center">
