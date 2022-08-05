@@ -21,10 +21,17 @@ Projeto criado para o desafio da Atlas GR Tecnologia.
 cd PedroFolego-desafio-react/
 npm install
 ``` 
+
 ### Executando aplicação
 ```
 cd src/
 npm start
+``` 
+
+### Executando os testes
+```
+cd PedroFolego-desafio-react/
+npm test
 ``` 
 
 ## Site
