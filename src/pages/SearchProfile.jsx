@@ -21,6 +21,7 @@ function SearchProfile({ setDataProfile }) {
     try {
       const response = await axios.get(`https://api.github.com/users/${input}`);
       setDataProfile(response.data);
+      localStorage.setItem('profile', JSON.stringify(response.data));
       navigate('/profile');
     } catch (error) {
       notFoundUser();

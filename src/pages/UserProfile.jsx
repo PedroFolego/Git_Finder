@@ -5,11 +5,14 @@ import User from '../components/User';
 import './UserProfile.css';
 
 function UserProfile({ dataProfile }) {
-  const { repos_url: reposUrl, public_repos: publicRepos } = dataProfile;
+  const lastProfile = JSON.parse(localStorage.getItem('profile'));
+  const profile = dataProfile.name ? dataProfile : lastProfile;
+
+  const { repos_url: reposUrl, public_repos: publicRepos } = profile;
 
   return (
     <main className="mainProfile">
-      <User dataProfile={dataProfile} />
+      <User dataProfile={profile} />
       <Repositories reposUrl={reposUrl} publicRepos={publicRepos} />
     </main>
   );

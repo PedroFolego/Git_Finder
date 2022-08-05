@@ -7,17 +7,19 @@ function User({ dataProfile }) {
   const {
     twitter_username: twitterUsername,
     avatar_url: avatarUrl,
+    html_url: htmlUrl,
     company, blog, location,
     following, name, bio,
     login, followers,
   } = dataProfile;
+
   return (
     <aside style={{ height: '100vh' }} className="mh-100 d-flex flex-column justify-content-center align-items-center userSide">
       <img src={avatarUrl} alt="user profile" className="rounded-circle profileImg" />
       <article className="d-flex flex-column">
         <h2>{name}</h2>
         <h4 className="mb-4">{login}</h4>
-        <Button variant="secondary" className="d-flex align-self-center w-50 justify-content-center">Follow</Button>
+        <Button href={htmlUrl} variant="secondary" className="d-flex align-self-center w-50 justify-content-center">Follow</Button>
         <h5 className="my-4">{bio}</h5>
         <h5>{blog}</h5>
         {twitterUsername && (
