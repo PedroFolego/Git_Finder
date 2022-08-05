@@ -26,7 +26,7 @@ function Repositories({ reposUrl, publicRepos }) {
       <nav className="mt-4 w-100">
         {repositories.map((repo) => (
           <div className="border-bottom mt-2 " key={repo.name}>
-            <h2 className="text-primary">{repo.name}</h2>
+            <h2 className="text-primary"><a href={repo.html_url}>{repo.name}</a></h2>
             {repo.language && <li>{repo.language}</li>}
             <p className="mt-2">{repo.description}</p>
             <div className="d-flex flex-wrap mt-2">
