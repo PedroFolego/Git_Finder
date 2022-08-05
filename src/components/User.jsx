@@ -29,12 +29,12 @@ function User({ dataProfile }) {
         <h5>{company}</h5>
         <h5>{location}</h5>
         <div className="d-flex flex-row justify-content-around align-items-center">
-          <p>
+          <p data-testid="following">
             <b>{following}</b>
             {' '}
             following
           </p>
-          <p>
+          <p data-testid="followers">
             <b>{followers}</b>
             {' '}
             followers

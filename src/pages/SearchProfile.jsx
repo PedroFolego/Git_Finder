@@ -46,6 +46,7 @@ function SearchProfile({ setDataProfile }) {
       <h1 className="text-center">Buscar Repositório no github</h1>
       <Form style={{ margin: '10px' }} className="d-flex justify-content-center align-items-center">
         <Form.Control
+          data-testid="input"
           style={{ marginRight: '10px' }}
           id="inputProfile"
           placeholder="Digite o nome do usuário"
@@ -53,6 +54,7 @@ function SearchProfile({ setDataProfile }) {
           onChange={onChangeButton}
         />
         <Button
+          data-testid="button"
           variant="primary"
           type="button"
           onClick={verifyImput}
