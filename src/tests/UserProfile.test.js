@@ -50,12 +50,10 @@ describe('Testa a página <UserProfile />', () => {
     expect(following).toBeInTheDocument();
     expect(followers).toBeInTheDocument();
   });
-  it('Teste se a página contém paragrafos com a quantidade de seguidores', async () => {
+  it('Teste se a página contém um h2 com Repositories 12', () => {
     renderRouter(<UserProfile dataProfile={fakeDataProfile} />);
-    const following = screen.getByTestId('following');
-    const followers = screen.getByTestId('followers');
+    const repositories = screen.getByRole('heading', { name: /Repositories 12/i });
 
-    expect(following).toBeInTheDocument();
-    expect(followers).toBeInTheDocument();
+    expect(repositories).toBeInTheDocument();
   });
 });
