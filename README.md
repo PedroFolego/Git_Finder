@@ -1,9 +1,7 @@
 # GitFinder
 
 ### Site de busca do GitHub.
-Sendo capaz de buscar todos os perfis de usuário do GitHub.
-
-Projeto criado para o desafio da Atlas GR Tecnologia.
+Sendo capaz de buscar todos os perfis de usuário do GitHub e seus respectivos repositórios.
 
 <details>
  <summary>Ilustração</summary>
